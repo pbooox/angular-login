@@ -43,10 +43,15 @@
 
           <!-- Remember me and forgot password -->
           <div class="form-options">
-            <label class="checkbox-label">
-              <input type="checkbox" class="checkbox-input" />
+            <label class="checkbox-label" (click)="toggleRememberMe()">
+              <input
+                type="checkbox"
+                class="checkbox-input"
+                [checked]="rememberMe()"
+              />
               <svg
                 class="checkbox-icon"
+                [class.checked]="rememberMe()"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -55,9 +60,20 @@
               >
                 <path
                   d="M14.4 4H5.6C4.71634 4 4 4.71634 4 5.6V14.4C4 15.2837 4.71634 16 5.6 16H14.4C15.2837 16 16 15.2837 16 14.4V5.6C16 4.71634 15.2837 4 14.4 4Z"
-                  stroke="#767676"
+                  [attr.stroke]="rememberMe() ? '#2563eb' : '#767676'"
+                  [attr.fill]="rememberMe() ? '#2563eb' : 'none'"
                   stroke-width="0.8"
                 />
+                @if (rememberMe()) {
+                <path
+                  d="M6.5 10.5L8.5 12.5L13.5 7.5"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                }
               </svg>
               <span>Recordarme</span>
             </label>
