@@ -517,6 +517,10 @@ body {
 
 /* Responsive design */
 @media screen and (max-width: 768px) {
+  .app-container {
+    padding-top: 64px; /* Maintain same padding for mobile navigation */
+  }
+
   .hero-content {
     padding: 0 32px;
   }
