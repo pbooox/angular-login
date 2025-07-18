@@ -9,4 +9,9 @@ import { NavigationComponent } from "./navigation/navigation.component";
 })
 export class App {
   protected readonly title = signal("vucBeta");
+  rememberMe = signal(false);
+
+  toggleRememberMe() {
+    this.rememberMe.set(!this.rememberMe());
+  }
 }
